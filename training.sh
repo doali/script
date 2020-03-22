@@ -8,7 +8,7 @@ DURATION_STEP=$2
 DURATION_REST=$3
 NB_OF_CYCLE=$4
 # ------------------------------------------------------------------------------
-TOTAL_TIME_CYCLE=$(expr $(expr $2 + $3) \* $(cat ${SEQUENCE} | wc -l))
+TOTAL_TIME_CYCLE=
 
 # ------------------------------------------------------------------------------
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -17,7 +17,7 @@ PATH_MUSIC=$(cat playlist)
 PATH_IMG=${CURRENT_DIR}/img
 REST_IMG=${PATH_IMG}/rest.png
 
-BELL="/usr/share/sounds/freedesktop/stereo/complete.oga"
+BELL=$(cat bell)
 # ------------------------------------------------------------------------------
 
 PAPLAY=$(which paplay)
@@ -27,7 +27,7 @@ VIEWER="$(which eog) --fullscreen"
 
 usage()
 {
-	echo "Usage training <FILE> <DURATION_STEP> <DURATION_REST> <NB_CYCLE>"
+	echo "Usage training <FILE_SEQUENCE> <DURATION_STEP> <DURATION_REST> <NB_CYCLE>"
 }
 
 do_play_bell()
@@ -67,6 +67,8 @@ do_cycle()
 if [ $# -ne 4 ]; then
 	usage
 else
+	TOTAL_TIME_CYCLE=$(expr $(expr $2 + $3) \* $(cat ${SEQUENCE} | wc -l))
+	echo $TOTAL_TIME_CYCLE
 	do_training $1 $2 $3 $4
 fi
 
