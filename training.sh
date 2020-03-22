@@ -40,7 +40,7 @@ do_play_music()
 	local selection=$1
 	local track=$(ls -1 "${PATH_MUSIC}" | head -${selection} | tail -1)
 	
-	timeout ${TOTAL_TIME_CYCLE} ${MPLAYER} "${PATH_MUSIC}/${track}" &
+	timeout ${TOTAL_TIME_CYCLE}s ${MPLAYER} "${PATH_MUSIC}/${track}" &
 }
 
 do_training()
