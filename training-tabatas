@@ -1,1 +1,1 @@
-./training.sh sequence_cardio 20 10 8
+./training.sh sequence_tabatas 20 10 2
