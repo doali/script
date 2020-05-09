@@ -1,2 +1,2 @@
-./training.sh sequence_climbing_1 30 8 1
-#./training.sh sequence_climbing_2 30 8 1
+#./training.sh sequence_climbing_1 40 8 1
+./training.sh sequence_climbing_2 40 8 1
