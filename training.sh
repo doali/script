@@ -68,7 +68,8 @@ if [ $# -ne 4 ]; then
 	usage
 else
 	TOTAL_TIME_CYCLE=$(expr $(expr $2 + $3) \* $(cat ${SEQUENCE} | wc -l))
-	echo $TOTAL_TIME_CYCLE
 	do_training $1 $2 $3 $4
+  echo "Time (sec) / cyle:$TOTAL_TIME_CYCLE"
+  echo "Nb cyle(s)       :$4"
 fi
 
