@@ -2,4 +2,4 @@
 _Sport at home..._
 
 - playlist must be defined
-- bell must me be defined as well
+- bell mus be defined as well
